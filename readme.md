@@ -49,7 +49,6 @@ Check Docker installation:
 docker --version
 docker compsose version
 git --version
-
 🛠 How to Run the Project
 Clone the Repository
 
@@ -57,19 +56,24 @@ git clone <your-repo-url>
 cd <project-directory>
 Build and Start All Services
 
-docker-compose up --build -d
-
+docker-compose up --build -d # -d for detach mode
+This command will -:
+Build Docker images for each service
+Start containers for service_1, service_2, and nginx
 View Running Containers
 
 docker ps
+Access the Application
 
 Once the containers are up and running, open your browser and go to.
 http://localhost # nginx
 http://localhost/service1/ping # golang
 http://localhost/service2/ping # python
-
+🛑 Stopping the Project
 To stop all containers and remove networks
 docker-compose down
+📜 View Logs from All Services
+docker compse logs -f
 
 You can also view logs for a specific service:
 docker-compose logs -f service_1
@@ -79,6 +83,7 @@ docker-compose logs -f nginx
 📌 Notes
 Ensure that required ports (e.g., 80, 8001, 8002) are not in use.
 
+
 The nginx reverse proxy should do the following 
 
 
@@ -87,19 +92,6 @@ The nginx reverse proxy should do the following
    * `/service2` requests to backend service 2
 2. All services must be accessible via a single port (e.g., `localhost:8080`).
 
-
----
-
-### ✅ **Requirements**
-
-
-1. Use Docker Compose to bring up the entire system.
-2. The Nginx config should support:
-   * Routing based on URL path prefix (`/service1`, `/service2`)
-   * Logging incoming requests with timestamp and path
-
-
----
 
 ### 📦 Tech Constraints
 
