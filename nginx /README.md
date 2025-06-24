@@ -33,7 +33,7 @@ EXPOSE 80
 
 ```
 nginx/
-├── default.conf  # Custom NGINX config file
+├── nginx.conf  # Custom NGINX config file
 ├── Dockerfile # Contains the above NGINX image build instructions
 └── README.md
 
