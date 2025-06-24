@@ -37,6 +37,47 @@ Your first job is to put this in a .git repository and add the following files
     └── uv.lock
 ```
 
+🚀 Getting Started
+✅ Prerequisites
+Make sure you have the following installed:
+
+Docker
+Docker Compose
+git
+Check Docker installation:
+
+docker --version
+docker compsose version
+git --version
+
+🛠 How to Run the Project
+Clone the Repository
+
+git clone <your-repo-url>
+cd <project-directory>
+Build and Start All Services
+
+docker-compose up --build -d
+
+View Running Containers
+
+docker ps
+
+Once the containers are up and running, open your browser and go to.
+http://localhost # nginx
+http://localhost/service1/ping # golang
+http://localhost/service2/ping # python
+
+To stop all containers and remove networks
+docker-compose down
+
+You can also view logs for a specific service:
+docker-compose logs -f service_1
+docker-compose logs -f service_2
+docker-compose logs -f nginx
+
+📌 Notes
+Ensure that required ports (e.g., 80, 8001, 8002) are not in use.
 
 The nginx reverse proxy should do the following 
 
@@ -56,12 +97,6 @@ The nginx reverse proxy should do the following
 2. The Nginx config should support:
    * Routing based on URL path prefix (`/service1`, `/service2`)
    * Logging incoming requests with timestamp and path
-3. The system should work with a single command:
-
-   ```bash
-   docker-compose up --build
-   ```
-4. Bonus: Add a health check for both services and show logs of successful routing.
 
 
 ---
