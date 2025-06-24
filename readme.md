@@ -1,6 +1,6 @@
 ### 🧪 **DevOps Intern Assignment: Nginx Reverse Proxy + Docker**
 
-# 🧩 Multi-Service Dockerized Application
+
 
 This project contains multiple services managed using Docker Compose:
 
@@ -15,7 +15,7 @@ This project contains multiple services managed using Docker Compose:
 ```
 ├── docker-compose.yml
 ├── nginx
-│   ├── default.conf
+│   ├── nginx.conf
 │   ├── Dockerfile
 │   └── README.md
 ├── readme.md
@@ -125,9 +125,3 @@ docker-compose logs -f nginx
 ## 📌 Notes
 
 ### Ensure that required ports (e.g., 80, 8001, 8002) are not in use.
-
-### Link of assignment 
-```
-https://docs.dpdzero.com/s/54dd25e3-7b3f-4327-92e8-34e32d8c377b#h-%E2%9C%85-requirements
-https://github.com/DPDzero/devops-assignment-Q2-2025.git
-```
