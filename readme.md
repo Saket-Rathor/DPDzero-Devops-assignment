@@ -1,27 +1,21 @@
-### **DevOps Intern Assignment: Nginx Reverse Proxy + Docker**
+### 🧪 **DevOps Intern Assignment: Nginx Reverse Proxy + Docker**
 
-You are expected to set up a docker compose based system:
+# 🧩 Multi-Service Dockerized Application
 
+This project contains multiple services managed using Docker Compose:
 
+- **service_1**: A Go backend service
+- **service_2**: A Python backend service (FastAPI or Flask)
+- **nginx**: A reverse proxy for routing between services
 
-1. **Download the source code for these services: <https://drive.google.com/drive/u/0/folders/1G4E1rmnUxlURxJZwc2AtQ9gy8Q2mwj3A>**
-2. This contains two folders
+---
 
-   
-   1. A golang application
-   2. A python application
-   3. The readme files in the two will explain how to run these.
-
-
-Your first job is to put this in a .git repository and add the following files
-
-
-### 📁 Project Structure
+## 📁 Project Structure
 
 ```
 ├── docker-compose.yml
 ├── nginx
-│   ├── nginx.conf
+│   ├── default.conf
 │   ├── Dockerfile
 │   └── README.md
 ├── readme.md
@@ -37,63 +31,103 @@ Your first job is to put this in a .git repository and add the following files
     └── uv.lock
 ```
 
-🚀 Getting Started
-✅ Prerequisites
+---
+
+## 🚀 Getting Started
+
+### ✅ Prerequisites
+
 Make sure you have the following installed:
 
-Docker
-Docker Compose
-git
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [git](https://git-scm.com/downloads/linux)
+
 Check Docker installation:
 
+```bash
 docker --version
 docker compsose version
 git --version
-🛠 How to Run the Project
-Clone the Repository
+```
 
-git clone <your-repo-url>
-cd <project-directory>
-Build and Start All Services
+---
 
-docker-compose up --build -d # -d for detach mode
-This command will -:
-Build Docker images for each service
-Start containers for service_1, service_2, and nginx
-View Running Containers
+### 🛠 How to Run the Project
 
-docker ps
-Access the Application
+1. **Clone the Repository**
 
-Once the containers are up and running, open your browser and go to.
+   ```bash
+   git clone <your-repo-url>
+   cd <project-directory>
+
+   ```
+
+2. **Build and Start All Services**
+   ```bash
+   docker-compose up --build -d # -d for detach mode
+   ```
+
+#### This command will -:
+
+- Build Docker images for each service
+- Start containers for service_1, service_2, and nginx
+
+3. **View Running Containers**
+
+   ```bash
+   docker ps
+
+   ```
+
+4. **Access the Application**
+
+##### Once the containers are up and running, open your browser and go to.
+
+####
+
+```bash
 http://localhost # nginx
 http://localhost/service1/ping # golang
 http://localhost/service2/ping # python
-🛑 Stopping the Project
-To stop all containers and remove networks
+```
+
+---
+
+## 🛑 Stopping the Project
+
+### To stop all containers and remove networks
+
+```bash
 docker-compose down
-📜 View Logs from All Services
+```
+
+---
+
+## 📜 View Logs from All Services
+
+```
 docker compse logs -f
 
-You can also view logs for a specific service:
+```
+
+#### You can also view logs for a specific service:
+
+```
 docker-compose logs -f service_1
 docker-compose logs -f service_2
 docker-compose logs -f nginx
 
-📌 Notes
-Ensure that required ports (e.g., 80, 8001, 8002) are not in use.
+```
 
+---
 
-The nginx reverse proxy should do the following 
+## 📌 Notes
 
+### Ensure that required ports (e.g., 80, 8001, 8002) are not in use.
 
-1. **Nginx reverse proxy** (also in a Docker container) routes:
-   * `/service1` requests to backend service 1
-   * `/service2` requests to backend service 2
-2. All services must be accessible via a single port (e.g., `localhost:8080`).
-
-
-### 📦 Tech Constraints
-
-* Nginx must run in a Docker container, not on host
-* Use bridge networking (no host networking)
+### Link of assignment 
+```
+https://docs.dpdzero.com/s/54dd25e3-7b3f-4327-92e8-34e32d8c377b#h-%E2%9C%85-requirements
+https://github.com/DPDzero/devops-assignment-Q2-2025.git
+```
