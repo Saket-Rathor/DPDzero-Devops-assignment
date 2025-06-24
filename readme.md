@@ -19,16 +19,22 @@ Your first job is to put this in a .git repository and add the following files
 ### 📁 Project Structure
 
 ```
-.
 ├── docker-compose.yml
 ├── nginx
-|   └── nginx.conf
-│   └── Dockerfile
+│   ├── nginx.conf
+│   ├── Dockerfile
+│   └── README.md
+├── readme.md
 ├── service_1
-│   └── Dockerfile
-├── service_2
-│   └── Dockerfile
-└── README.md
+│   ├── Dockerfile
+│   ├── main.go
+│   └── README.md
+└── service_2
+    ├── app.py
+    ├── Dockerfile
+    ├── pyproject.toml
+    ├── README.md
+    └── uv.lock
 ```
 
 
