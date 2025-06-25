@@ -1,4 +1,4 @@
-### 🧪 **DevOps Intern Assignment: Nginx Reverse Proxy + Docker**
+###  **DevOps Intern Assignment: Nginx Reverse Proxy + Docker**
 
 
 
