@@ -88,8 +88,8 @@ git --version
 
 ```bash
 http://localhost # nginx
-http://localhost/service1/ping # golang
-http://localhost/service2/ping # python
+curl http://localhost/service1/ping # golang
+curl http://localhost/service2/ping # python
 ```
 
 ---
